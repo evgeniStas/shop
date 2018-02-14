@@ -1,0 +1,378 @@
+/*
+Theme Name: Swiego
+Theme URI: http://swiego.com
+Author: Evgeni Stas
+Description: Swiego shop
+Version: 1.0
+License: Creative license
+*/
+@import "fonts/style.css";
+@font-face{
+    font-family: 'Courier';
+    src: url('fonts/Courier.ttf');
+    url('css/font/Courier.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Arial';
+    src: url('fonts/Arial.ttf');
+    url('css/font/Arial.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+html,body {
+    font-family: 'Arial';
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    font-size: 18px;
+}
+.main-menu {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: #FFFFFF;
+}
+.left-menu ul li {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin: 5px;
+    list-style: none;
+    zoom: 1;
+}
+.left-menu ul li a {
+    text-decoration: none;
+    color: #F7F7F7;
+    font-size: 40px;
+    font-weight: bold;
+}
+.left-menu .active a {
+    border-bottom: 1px solid #FFFFFF;
+    padding-right: 25px;
+    padding-bottom: 5px;
+}
+.left-menu a:hover {
+    border-bottom: 1px solid #FFFFFF;
+    padding-right: 25px;
+    padding-bottom: 5px;
+}
+.menu:after, .main-menu:after, .lines:after, .items:after, .controls:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.main-menu .logo {
+    float: left;
+    margin-top: 17px;
+    margin-left: 45px;
+}
+.menu .logo img {
+    padding: 10px;
+}
+
+.main-menu .logo img {
+    width: 177px;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+.main-menu .lines {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    background-color: #0E0E0E;
+    cursor: pointer;
+    float: right;
+}
+.main-menu .lines span {
+    font-size: 29px;
+    color: white;
+}
+#menu {
+    padding-top: 75px;
+}
+#menu .left-menu {
+    width:45%;
+    float: left;
+}
+#menu .items {
+    background-color: #0E0E0E;
+    font-family: 'Courier';
+}
+#menu .items>div {
+    padding-left: 106px;
+    padding-bottom: 103px;
+    padding-top: 103px;
+}
+#menu .left-menu .search {
+    margin-top: 22px;
+    margin-left: 41px;
+}
+input, textarea {
+    border: 1px solid #0F0C0C;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search input {
+    width:266px;
+    vertical-align: top;
+    float:left;
+    font-size: 15px;
+}
+.search:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.searchIcon {
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.search span {
+    color: #000000;
+    vertical-align: top;
+    font-size: 25px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+#menu .poster {
+    float: left;
+    width: 55%;
+    overflow: hidden;
+}
+.items .book {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.items .item {
+    float: left;
+    width: 33.33333%;
+    margin-top: 138px;
+}
+.items .item .title {
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.items .item .desc {
+    font-size: 14px;
+    text-align: left;
+    color: #B7B7B7;
+}
+.items .item .img {
+    padding: 47px;
+}
+.items .item .controls .price {
+    font-size: 20px;
+    color: #0F0C0C;
+    float: left;
+    margin-top: 12px;
+}
+.items .item .controls .button {
+    float: right;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    border: 1px solid #0F0C0C;
+    padding: 13px;
+    cursor:pointer;
+}
+.items .item .controls .button:hover {
+    background: #0E0E0E;
+    color: #FEFEFE;
+}
+.items .item .controls .button span{
+    vertical-align: text-bottom;
+    margin-left: 13px;
+}
+.morebtn {
+    margin-top: 72px;
+    margin-bottom: 93px;
+}
+.morebtn div {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 23px;
+}
+.morebtn div:after {
+    background-color: #0F0C0C;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+.morebtn div:hover:after,
+.morebtn div:focus:after {
+    width: 100%;
+}
+.morebtn div span {
+    vertical-align: text-bottom;
+    margin-left: 13px;
+}
+#story {
+    background-color: #0E0E0E;
+    color:#F7F7F7;
+    padding-bottom: 70px;
+    padding-top: 70px;
+}
+#story .item {
+    width:50%;
+    float: left;
+}
+#story .item .title {
+    text-align: left;
+    font-family: 'Courier';
+    font-size: 40px;
+    font-weight: bold;
+}
+#story .item .desc {
+    text-align: left;
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 35px;
+}
+#story .item .left {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#story .item .right {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#story .container:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.soc {
+    text-align: left;
+    margin-top: 25px;
+}
+.soc span {
+    font-size: 36px;
+    border: 2px solid #9B9B9B;
+    border-radius: 50%;
+}
+.soc .ttl {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+    margin-right: 3px;
+}
+.soc a {
+    margin-left: 17px;
+}
+a {
+    text-decoration: none;
+    color: #F7F7F7;
+}
+#contact {
+    margin: 70px;
+}
+#contact .title {
+    text-align: center;
+    font-family: 'Courier';
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 12px;
+}
+.c-info:after, .title-contact:after, .contact-form:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.c-info .item {
+    width:50%;
+    font-size: 14px;
+    color: #484848;
+    float: left;
+}
+.c-info .item:first-child span {
+    padding-right: 10px;
+    border-right: 1px solid #EAEAEA;
+}
+.c-info .item:last-child span {
+    padding-left: 10px;
+}
+.c-info .item:first-child {
+    text-align: right;
+}
+.c-info .item:last-child {
+    text-align: left;
+}
+.contact-form {
+    width:564px;
+    margin: auto;
+    margin-top: 50px;
+}
+.title-contact input {
+    width:100%;
+}
+.title-contact div {
+    width:50%;
+    float:left;
+}
+.title-contact div:first-child {
+    text-align: left;
+}
+.title-contact div:last-child {
+    text-align: right;
+}
+.title-contact input {
+    width: 272px;
+}
+.contact-form .sub {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 140px;
+}
+.contact-form .button {
+    float: left;
+    color: #F6F6F6;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    border: 1px solid #0F0C0C;
+    padding: 13px;
+    cursor:pointer;
+    background-color: #0E0E0E;
+}
+.contact-form .button:hover {
+    color: #000000;
+    background-color: #F6F6F6;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
