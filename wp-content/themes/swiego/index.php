@@ -12,6 +12,18 @@
 </head>
 <body>
     <div class="site-wrap">
+
+        <div data-percent="100" class="grid">
+            <div data-percent="100" class="line-1">
+            </div>
+            <div data-percent="100" class="line-2">
+            </div>
+            <div data-percent="100" class="line-3">
+            </div>
+            <div data-percent="100" class="line-4">
+            </div>
+        </div>
+
         <div class="main-menu">
             <div class="logo">
                 <a href="#">
@@ -56,6 +68,25 @@
                                 </div>
                                 <div class="img">
                                     <img src="<?php echo get_template_directory_uri();  ?>/img/cover.png"/>
+                                </div>
+                                <div class="controls">
+                                    <div class="price">$230</div>
+                                    <div class="button">
+                                        Add to cart <span class="icon-btn_arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hovered">
+                                <div class="title">Package Design </div>
+                                <div class="desc">
+                                    Excepteur sint occaecat cupida
+                                    tat non proident, sunt inculpaqui
+                                    officia deserunt mollit.
+                                    <br><br>
+                                    Ut enim ad minim veniam, nost-
+                                    rud exercitation ullamco laboris
+
+                                    nisi ut ullamco.
                                 </div>
                                 <div class="controls">
                                     <div class="price">$230</div>
