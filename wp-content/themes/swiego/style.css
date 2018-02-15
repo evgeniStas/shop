@@ -320,6 +320,7 @@ ul {
 #story .item .left {
     margin-left: 50px;
     margin-right: 50px;
+    overflow: hidden;
 }
 #story .item .right {
     margin-left: 50px;
@@ -483,4 +484,124 @@ a {
 .contact-form {
     position: relative;
     z-index: 2;
+}
+@media (min-width: 740px) and (max-width: 1024px) {
+    .container {
+        width: 695px;
+    }
+    #menu .items>div {
+        padding-left: 50px;
+    }
+    #story .item .right {
+        margin-right: 0px;
+        margin-left: 20px;
+
+    }
+    #story .item .left {
+        margin: 0px;
+        overflow: hidden;
+    }
+    #story .item .desc {
+        font-size: 14px;
+    }
+    .search input {
+        width: 215px;
+    }
+    .grid .line-2 {
+        left: 385px;
+    }
+    .grid .line-3 {
+        right: 365px;
+    }
+
+}
+@media (max-width: 740px) {
+    .container {
+        width: auto;
+    }
+
+    #menu .items > div {
+        padding-left: 20px;
+    }
+
+    .main-menu .lines {
+        padding: 24px;
+        background-color: #0E0E0E;
+        cursor: pointer;
+        float: right;
+    }
+
+    #menu .left-menu {
+        width: 100%;
+        float: none;
+    }
+
+    #menu .poster {
+        float: none;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .items .item {
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #story .item {
+        width: 100%;
+        float: none;
+    }
+
+    .title-contact div {
+        width: 100%;
+        float: none;
+    }
+
+    .title-contact input {
+        width: 100%;
+    }
+
+    .item .hovered {
+        width: auto;
+    }
+
+    #story .item .right {
+        margin-top: 50px;
+    }
+
+    #story .item .title {
+        text-align: center;
+    }
+
+    .title-contact input:last-child {
+        margin-top: 30px;
+    }
+
+    .contact-form {
+        width: auto;
+    }
+
+    .search input {
+        width: 190px;
+    }
+
+    .soc {
+        text-align: center;
+    }
+
+    .soc .ttl {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .grid .line-2 {
+        display:none;
+    }
+    .grid .line-3 {
+        display:none;
+    }
+    #story .item .desc {
+        text-align: center;
+    }
 }
