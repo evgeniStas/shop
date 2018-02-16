@@ -58,9 +58,7 @@ $meta_index = get_post_meta($post_id);
             <?php
             $img = get_field('cover',$post_id);
             ?>
-            <div class="poster">
-                <img src="<?php echo $img["sizes"]["large"];  ?>"/>
-            </div>
+            <div class="poster" style="background: url(<?php echo $img["sizes"]["large"];  ?>);"></div>
         </div>
         <div id="books">
             <div class="container">

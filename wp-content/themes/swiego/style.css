@@ -156,6 +156,9 @@ ul {
     float: left;
     width: 58%;
     overflow: hidden;
+    height: 454px;
+    background-position: left, right;
+    background-size: cover;
 }
 .items .book {
     padding-left: 40px;
