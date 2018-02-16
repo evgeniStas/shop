@@ -13,6 +13,7 @@ $meta_index = get_post_meta($post_id);
 
 <html>
 <head>
+    <title><?php echo bloginfo('name'); ?></title>
     <?php get_header() ?>
 </head>
 <body>
