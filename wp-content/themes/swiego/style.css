@@ -216,7 +216,7 @@ ul {
 }
 .item .hovered {
     width: 75%;
-    height: 400px;
+    height: 430px;
     position: absolute;
     top: 0;
     left: 0;
@@ -228,7 +228,13 @@ ul {
     padding-right: 40px;
 }
 .item .hovered .controls {
-    margin-top: 30px;
+    margin: 0px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 85%;
 }
 .item .hovered .controls .price {
     color: #FEFEFE;
@@ -527,6 +533,19 @@ a {
     .grid .line-3 {
         right: 365px;
     }
+    .items .item .title {
+        font-size: 20px
+    }
+    .items .item .hovered .button {
+        float: none;
+    }
+    .items .item .controls .price {
+        float: none;
+        margin-bottom: 20px;
+    }
+    .items .item .book .desc {
+        height: 32px;
+    }
 
 }
 @media (max-width: 740px) {
@@ -555,6 +574,7 @@ a {
         width: 100%;
         overflow: hidden;
         text-align: center;
+        margin-top: 20px;
     }
 
     .items .item {
