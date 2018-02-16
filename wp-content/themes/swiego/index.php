@@ -4,7 +4,12 @@
  * User: evgeni
  * Date: 14.02.18
  * Time: 10:54
- */?>
+ *
+ */
+$post_id = 31;
+
+$meta_index = get_post_meta($post_id);
+?>
 
 <html>
 <head>
@@ -44,59 +49,62 @@
                     <?php wp_nav_menu();?>
                 </div>
                 <div class="search">
-                    <input type="text" placeholder="Search Book.." />
+                    <input id="search_input" type="text" placeholder="Search Book.." />
                     <div class="searchIcon">
                         <span class="icon-search_ic"></span>
                     </div>
                 </div>
             </div>
+            <?php
+            $img = get_field('cover',$post_id);
+            ?>
             <div class="poster">
-                <img src="<?php echo get_template_directory_uri();  ?>/img/florian-klauer-489.png"/>
+                <img src="<?php echo $img["sizes"]["large"];  ?>"/>
             </div>
         </div>
         <div id="books">
             <div class="container">
                 <div class="items">
+
                     <?php
-                    for($i = 0;$i<9;$i++){
+                    $args = array(  'post_type'=> 'books', 'posts_per_page' => 9, 'order' => 'ASC');
+                    $items = get_posts( $args );
+                    wp_reset_postdata();
+                    foreach( $items as $item ) {
+                        setup_postdata($item);
+                        $meta_values = get_post_meta($item->ID);
+                        $img = wp_get_attachment_image_src($meta_values["photo"][0]);
                         ?>
                         <div class="item">
                             <div class="book">
-                                <div class="title">Package Design </div>
+                                <div class="title"><?php echo $item->post_title;?></div>
                                 <div class="desc">
-                                    By Jean Jacques & Brigitte Evard
+                                    <?php echo $meta_values["description"][0];?>
                                 </div>
                                 <div class="img">
-                                    <img src="<?php echo get_template_directory_uri();  ?>/img/cover.png"/>
+                                    <img src="<?php echo $img[0];  ?>"/>
                                 </div>
                                 <div class="controls">
-                                    <div class="price">$230</div>
+                                    <div class="price">$<?php echo $meta_values["price"][0];?></div>
                                     <div class="button">
                                         Add to cart <span class="icon-btn_arrow"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="hovered">
-                                <div class="title">Package Design </div>
+                                <div class="title"><?php echo $item->post_title;?></div>
                                 <div class="desc">
-                                    Excepteur sint occaecat cupida
-                                    tat non proident, sunt inculpaqui
-                                    officia deserunt mollit.
-                                    <br><br>
-                                    Ut enim ad minim veniam, nost-
-                                    rud exercitation ullamco laboris
-
-                                    nisi ut ullamco.
+                                    <?php echo $item->post_content;?>
                                 </div>
                                 <div class="controls">
-                                    <div class="price">$230</div>
+                                    <div class="price">$<?php echo $meta_values["price"][0];?></div>
                                     <div class="button">
                                         Add to cart <span class="icon-btn_arrow"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                     }
                     ?>
                 </div>
@@ -105,32 +113,36 @@
                 </div>
             </div>
         </div>
+        <?php
+        $img = get_field('our_story_photo',$post_id);
+        ?>
         <div id="story">
             <div class="container">
                 <div class="item">
                     <div class="left">
-                        <img src="<?php echo get_template_directory_uri();  ?>/img/tomas-anton-escobar-502621.png"/>
+                        <img src="<?php echo  $img["sizes"]["large"];  ?>"/>
                     </div>
                 </div>
                 <div class="item">
                     <div class="right">
-                        <div class="title">Our story</div>
+                        <div class="title"><?php the_field('our_story', $post_id); ?></div>
                         <div class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisc
-                            elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad minim veniam,  nostrud exercitation ullamco laboris nisi ut aliquip
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <?php the_field('our_story_text', $post_id); ?>
                         </div>
                         <div class="soc">
                             <div class="ttl">Follow us</div>
-                            <a href="#">
-                                <span class="icon-In_ic"></span>
-                            </a>
-                            <a href="#">
-                                <span class="icon-Fb_ic"></span>
-                            </a>
-                            <a href="#">
-                                <span class="icon-tw_ic2"></span>
-                            </a>
+                            <?php
+                            $args = array(  'post_type'=> 'social', 'posts_per_page' => -1);
+                            $Social = get_posts( $args );
+                            wp_reset_postdata();
+                            foreach( $Social as $item ) {
+                                setup_postdata($item);
+                                $meta_values = get_post_meta( $item->ID );
+                                ?>
+                                    <a target="_blank" href="<?php echo $meta_values["link"][0];?>"><?php echo $meta_values["icon"][0];?></a>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -141,25 +153,25 @@
                 <div class="title">Contact</div>
                 <div class="c-info">
                     <div class="item">
-                        <span>+ (972) 457 76 846</span>
+                        <span><?php the_field('phone', $post_id); ?></span>
                     </div>
                     <div class="item">
-                        <span>store@gmail.com</span>
+                        <span><?php the_field('email', $post_id); ?></span>
                     </div>
                 </div>
                 <div class="contact-form">
                     <div class="title-contact">
                         <div>
-                            <input type="text" placeholder="Name">
+                            <input id="name" type="text" placeholder="Name">
                         </div>
                         <div>
-                            <input type="text" placeholder="E-mail">
+                            <input id="email" type="text" placeholder="E-mail">
                         </div>
                     </div>
-                    <input class="sub" tyle="text" placeholder="Subject"/>
-                    <textarea placeholder="Tell"></textarea>
+                    <input id="sub" class="sub" tyle="text" placeholder="Subject"/>
+                    <textarea id="text" placeholder="Tell"></textarea>
                     <div class="controll">
-                        <div class="button">Send <span class="icon-btn_arrow"></span></div>
+                        <div id="sendContact" class="button">Send <span class="icon-btn_arrow"></span></div>
                     </div>
                 </div>
             </div>

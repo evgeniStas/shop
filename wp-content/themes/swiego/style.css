@@ -265,8 +265,7 @@ ul {
     margin-left: 13px;
 }
 .morebtn {
-    margin-top: 72px;
-    margin-bottom: 93px;
+    margin-bottom: 72px;
 }
 .morebtn div {
     display: inline-block;
@@ -484,6 +483,18 @@ a {
 .contact-form {
     position: relative;
     z-index: 2;
+}
+.success {
+    color: #51b533;
+}
+.success {
+    color: #51b533;
+}
+.error {
+    color: #b53333;
+}
+#books .items {
+    margin-bottom: 93px;
 }
 @media (min-width: 740px) and (max-width: 1024px) {
     .container {
