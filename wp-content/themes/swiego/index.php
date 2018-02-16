@@ -175,4 +175,5 @@ $meta_index = get_post_meta($post_id);
             </div>
         </div>
     </div>
+    <?php wp_footer() ?>
 </body>
