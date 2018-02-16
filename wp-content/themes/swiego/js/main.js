@@ -59,9 +59,8 @@ $(function() {
         var data = {
             'action': 'load_posts_by_ajax'
         };
-
+        $(".morebtn").css("display","none");
         $.post(ajax_url, data, function(response) {
-            $(this).css("display","none");
             $('#books .items').append(response);
         });
     });
