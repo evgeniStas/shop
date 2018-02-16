@@ -157,8 +157,8 @@ ul {
     width: 58%;
     overflow: hidden;
     height: 454px;
-    background-position: left, right;
-    background-size: cover;
+    background-position: left, right!important;
+    background-size: cover!important;
 }
 .items .book {
     padding-left: 40px;
