@@ -649,9 +649,9 @@ a {
         text-align: center;
     }
     .item .hovered {
-        width:88%;
+        width:82%;
     }
     .items .item .hovered .button {
-        margin-right: -38px;
+        margin-right: -4px;
     }
 }
