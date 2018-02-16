@@ -216,7 +216,7 @@ ul {
 }
 .item .hovered {
     width: 75%;
-    height: 430px;
+    height: 395px;
     position: absolute;
     top: 0;
     left: 0;
@@ -230,7 +230,7 @@ ul {
 .item .hovered .controls {
     margin: 0px;
     position: absolute;
-    bottom: 50px;
+    bottom: 48px;
     left: 0;
     margin-left: 20px;
     margin-right: 20px;
@@ -238,6 +238,7 @@ ul {
 }
 .item .hovered .controls .price {
     color: #FEFEFE;
+    margin-left: 20px;
 }
 .items .hovered .title {
     color: #FEFEFE;
@@ -264,6 +265,7 @@ ul {
     border: 1px solid #ffffff;
     padding: 13px;
     cursor: pointer;
+    margin-right: 10px;
 }
 .items .item .hovered .button:hover {
     color: #000000;
@@ -538,6 +540,8 @@ a {
     }
     .items .item .hovered .button {
         float: none;
+        width: 115px;
+        display: inline-block;
     }
     .items .item .controls .price {
         float: none;
@@ -545,6 +549,16 @@ a {
     }
     .items .item .book .desc {
         height: 32px;
+    }
+    .item .hovered {
+        height: 460px;
+    }
+    .item .hovered .controls {
+        bottom: 46px;
+    }
+    .item .hovered .controls .price {
+        margin-left: 0px;
+        width: 90%;
     }
 
 }
@@ -633,5 +647,11 @@ a {
     }
     #story .item .desc {
         text-align: center;
+    }
+    .item .hovered {
+        width:88%;
+    }
+    .items .item .hovered .button {
+        margin-right: -38px;
     }
 }
